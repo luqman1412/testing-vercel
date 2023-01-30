@@ -24,6 +24,7 @@ Route::get('/', function () {
 // });
 Route::get('/migrate', function () {
     Artisan::call('migrate --force');
+    echo "done migrate";
 });
 
 Auth::routes();
