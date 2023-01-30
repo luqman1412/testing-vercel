@@ -17,10 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/migrate', function (){
-	\Artisan::call('queue:work');
-});
+// Route::get('/migrate', function (){
+// 	\Artisan::call('queue:work');
+//     return 'Queue started.';
 
+// });
+Route::get('/migrate', function () {
+    Artisan::call('migrate --force');
+});
 
 Auth::routes();
 
